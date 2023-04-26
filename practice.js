@@ -35,17 +35,45 @@ const recipes = {
 /*************************** FUNCTION TO REFACTOR ****************************/
 function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
   // Find the recipe for the pieType specified
+  
+  // Original
   const recipe = recipes[pieType];
-  // Bake the number of pies specified by the pieQuantity
+
+  //SRP Attempt
+  // const findRecipe = () => {
+  //   let recipe = recipes[pieType];
+  // } 
+
+//SRP Attempt
+//! Producing the Pie
+//! For each iteration of pieQuantity, we want to combine the ingredients. 
+let production = () => {
   for (let i = 0; i < pieQuantity; i++) {
-    // Print the ingredients for each ingredient in the recipe
     let combiningMsg = `Combining ingredients for ${pieType}: `
     combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
     console.log(combiningMsg);
-
-    // Print the nth pie that was baked
     console.log(`Baked pie ${i + 1}!`);
   }
+}
+
+production();
+
+//Original 
+  // Bake the number of pies specified by the pieQuantity
+  // for (let i = 0; i < pieQuantity; i++) {
+  //   // Print the ingredients for each ingredient in the recipe
+  //   let combiningMsg = `Combining ingredients for ${pieType}: `
+  //   combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
+  //   console.log(combiningMsg);
+
+  //   // Print the nth pie that was baked
+  //   console.log(`Baked pie ${i + 1}!`);
+  // }
+
+//! Selling the Pie
+// let profit = () => {
+
+// }
 
   // Print the cost of each pie based on the cost of each ingredient
   const costOfPie = recipe.reduce((prev, current) => {
@@ -62,9 +90,9 @@ function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
 }
 
 /******************************* LOCAL TESTS *******************************/
-// bakeAndSellPies("applePie", 5, 2.5);
-// bakeAndSellPies("pumpkinPie", 2);
-// bakeAndSellPies("cherryPie", 7, 1.7);
+// console.log(bakeAndSellPies("applePie", 5, 2.5));
+console.log(bakeAndSellPies("pumpkinPie", 2));
+// console.log(bakeAndSellPies("cherryPie", 7, 1.7));
 
 /**************************************************************************/
 /* DO NOT CHANGE THE CODE BELOW */
