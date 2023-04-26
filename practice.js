@@ -33,6 +33,15 @@ const recipes = {
 /* DO NOT CHANGE THE CODE ABOVE */
 
 /*************************** FUNCTION TO REFACTOR ****************************/
+const production = () => {
+  for (let i = 0; i < pieQuantity; i++) {
+    let combiningMsg = `Combining ingredients for ${pieType}: `
+    combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
+    console.log(combiningMsg);
+    console.log(`Baked pie ${i + 1}!`);
+  }
+}
+
 function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
   // Find the recipe for the pieType specified
   
@@ -47,15 +56,6 @@ function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
 //SRP Attempt
 //! Producing the Pie
 //! For each iteration of pieQuantity, we want to combine the ingredients. 
-let production = () => {
-  for (let i = 0; i < pieQuantity; i++) {
-    let combiningMsg = `Combining ingredients for ${pieType}: `
-    combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
-    console.log(combiningMsg);
-    console.log(`Baked pie ${i + 1}!`);
-  }
-}
-
 production();
 
 //Original 
